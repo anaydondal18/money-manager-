@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Money Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h1>💰 Money Manager</h1>
+
+            <p>Track your money. Understand your spending.</p>
+
+        </header>
+
+
+        <!-- SUMMARY -->
+
+        <div class="summary">
+
+            <div class="card balance-card">
+
+                <h3>Balance</h3>
+
+                <h2 id="balance">₹0</h2>
+
+            </div>
+
+
+            <div class="card income-card">
+
+                <h3>Income</h3>
+
+                <h2 id="income">₹0</h2>
+
+            </div>
+
+
+            <div class="card expense-card">
+
+                <h3>Expenses</h3>
+
+                <h2 id="expenses">₹0</h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MONTH -->
+
+        <div class="section month-section">
+
+            <h2>📅 Monthly Overview</h2>
+
+            <label for="monthInput">
+                Select Month
+            </label>
+
+            <input
+                type="month"
+                id="monthInput"
+            >
+
+        </div>
+
+
+
+        <!-- ADD TRANSACTION -->
+
+        <div class="section add-transaction">
+
+            <h2>➕ Add Transaction</h2>
+
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="Transaction name"
+                >
+
+
+                <input
+                    type="number"
+                    id="amountInput"
+                    placeholder="Amount"
+                    min="1"
+                    step="0.01"
+                >
+
+
+                <select id="typeInput">
+
+                    <option value="Income">
+                        Income
+                    </option>
+
+                    <option value="Expense">
+                        Expense
+                    </option>
+
+                </select>
+
+
+                <select id="category">
+
+                    <option>Food</option>
+
+                    <option>Shopping</option>
+
+                    <option>Travel</option>
+
+                    <option>Bills</option>
+
+                    <option>Education</option>
+
+                    <option>Entertainment</option>
+
+                    <option>Other</option>
+
+                </select>
+
+
+                <input
+                    type="date"
+                    id="dateInput"
+                >
+
+            </div>
+
+
+            <button id="addButton">
+                Add Transaction
+            </button>
+
+        </div>
+
+
+
+        <!-- CHART -->
+
+        <div class="section chart-section">
+
+            <h2>📊 Income vs Expenses</h2>
+
+            <div class="chart-container">
+
+                <canvas id="moneyChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MONTHLY TREND -->
+
+        <div class="section chart-section">
+
+            <h2>📈 Monthly Spending Trend</h2>
+
+            <div class="trend-container">
+
+                <canvas id="trendChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CATEGORY -->
+
+        <div class="section category-summary">
+
+            <h2>💳 Spending by Category</h2>
+
+            <div id="categoryList">
+
+                <p>No expenses yet.</p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- HISTORY -->
+
+        <div class="section transactions">
+
+            <div class="history-header">
+
+                <h2>📋 Transaction History</h2>
+
+                <button
+                    id="resetButton"
+                    class="reset-button"
+                >
+                    🧹 Reset All Data
+                </button>
+
+            </div>
+
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search transactions..."
+            >
+
+
+            <div id="transactionList">
+
+                <p>No transactions yet.</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- CHART.JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- OUR SCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
